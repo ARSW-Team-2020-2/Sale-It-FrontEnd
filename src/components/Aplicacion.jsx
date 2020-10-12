@@ -1,6 +1,14 @@
 import React from 'react';
 
 export default function Aplicacion() {
+
+  const signOut = (e) =>{
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('typeUserLogged');
+    window.location.href = "/";
+  }
+
   return (
     <div id="inicio" >
       <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -16,7 +24,8 @@ export default function Aplicacion() {
               <li className="nav-item"><a href="#acerca" className="nav-link">Acerca de Nosotros</a></li>
               <li className="nav-item"><a href="#categorias" className="nav-link">Categorías</a></li>
               <li className="nav-item"><a href="#misSubastas" className="nav-link">Mis Subastas</a></li>
-              <li className="nav-item"><a href="#informacion" className="nav-link">Información de Contacto</a></li>
+              <li className="nav-item"><a href="#informacion" className="nav-link">Contacto</a></li>
+              <li className="nav-item"><a href="#cerrarSesion" className="nav-link"  onClick={(e) => signOut()}>Salir</a></li>
             </ul>
           </div>
         </div>

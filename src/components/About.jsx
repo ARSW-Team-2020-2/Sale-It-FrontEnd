@@ -17,8 +17,9 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <section className="ftco-section testimony-section baner-final">
-                </section>
+            </div>
+            <div>
+                <img className="center" src='/img/auction2.png' alt="auction2" ></img>
             </div>
         </div>
     );

@@ -28,12 +28,13 @@ export default function SignIn() {
     }
 
 
+
     return (
         <section className="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
             <div className="container">
                 <div className="row no-gutters">
                     <div className="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
-                        <form className="appointment-form"  onSubmit={handleSubmit}>
+                        <form className="appointment-form" onSubmit={handleSubmit}>
                             <h3 className="mb-3">Ingresa!</h3>
                             <div className="row">
                                 <div className="col-md-12">
