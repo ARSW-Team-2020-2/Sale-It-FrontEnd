@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## _Despliegue en Heroku_ 🚀
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://sale-it.herokuapp.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
