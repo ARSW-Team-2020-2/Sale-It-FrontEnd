@@ -6,7 +6,7 @@ export default function ContactInf() {
 
         <div id="informacion" className="container">
             <div className="row d-flex contact-info">
-                <div className="w-100"> </div>
+                <div className="w-100"></div>
                 <div className="col-md-6 d-flex">
                     <div className="dbox">
                         <p><span>Desarrolladores:</span> Juan Sebastián Díaz, Juan Sebastián Frásica y Daniela Ruiz.</p>

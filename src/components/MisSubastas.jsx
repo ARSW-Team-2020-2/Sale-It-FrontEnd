@@ -12,7 +12,7 @@ export default function MisSubastas() {
             </div>
             <div className="auction-background">
                 <div className="wrap-about py-5 text-center">
-                    <row >
+                    <row>
                         <button className="btn btn-primary">Mis participaciones</button>
                         <button className="btn btn-primary ml-3">Mis subastas creadas</button>
                     </row>

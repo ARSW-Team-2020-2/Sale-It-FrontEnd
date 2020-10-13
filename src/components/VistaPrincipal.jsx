@@ -6,14 +6,14 @@ import MisSubastas from './MisSubastas';
 import ContactPanel from './ContactPanel';
 
 export default function VistaPrincipal() {
-    
-  return (
-      <div>
-    <Aplicacion />
-    <About />
-    <Categorias />
-    <MisSubastas />
-    <ContactPanel />
-    </div>
-  );
+
+    return (
+        <div>
+            <Aplicacion/>
+            <About/>
+            <Categorias/>
+            <MisSubastas/>
+            <ContactPanel/>
+        </div>
+    );
 }

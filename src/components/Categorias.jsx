@@ -21,7 +21,9 @@ export default function Categorias() {
                             <h3 className="heading">Hogar y Cocina</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -33,7 +35,9 @@ export default function Categorias() {
                             <h3 className="heading">Salud y Belleza</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -45,7 +49,9 @@ export default function Categorias() {
                             <h3 className="heading">Bebidas y Licores</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -60,7 +66,9 @@ export default function Categorias() {
                             <h3 className="heading">Carros y Motos</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -72,7 +80,9 @@ export default function Categorias() {
                             <h3 className="heading">Sección Infantil</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -84,7 +94,9 @@ export default function Categorias() {
                             <h3 className="heading">Ropa y Accesorios</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -99,7 +111,9 @@ export default function Categorias() {
                             <h3 className="heading">Muebles y Jardinería</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -111,7 +125,9 @@ export default function Categorias() {
                             <h3 className="heading">Sección de Tecnología</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -124,7 +140,9 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
 
-                                <button className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
 
                             </p>
                         </div>
