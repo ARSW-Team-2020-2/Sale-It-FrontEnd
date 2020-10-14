@@ -31,7 +31,7 @@ export default function Subasta() {
         }
         var dia = new Date().toISOString().slice(0, 10).toString();
         var hora = new Date().getHours().toString();
-        var minuto = new Date().getMinutes() + 3;
+        var minuto = new Date().getMinutes() + 1;
         if (minuto < 10) {
             minuto = "0" + minuto;
         }
@@ -43,11 +43,8 @@ export default function Subasta() {
             articulo: articulo
         }
 
-        console.log(articulo);
-        console.log(articulo.categoria);
 
         console.log(subasta);
-        console.log(userID);
 
         Axios.post("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions", subasta)
             .then(res => {
