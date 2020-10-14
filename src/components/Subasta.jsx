@@ -1,8 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
 
 export default function Subasta() {
-    return (
 
+    var cate = localStorage.getItem("categoria");
+
+    const [nombre, setNombre] = useState("")
+    const [estadodeuso, setEstadoDeUso] = useState("")
+    const [descripcion, setDescripcion] = useState("")
+    const [preciominimo, setPrecioMinimo] = useState("")
+    const [dimensiones, setDimensiones] = useState("")
+    const [ubicacion, setUbicacion] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const articulo = {
+            nombre: nombre,
+            estadoDeUso: estadodeuso,
+            descripcion: descripcion,
+            precioMinimo: preciominimo,
+            dimensiones: dimensiones,
+            ubicacion: ubicacion,
+            categoria: cate,
+        }
+
+        console.log(articulo);
+        console.log(articulo.categoria);
+
+        Axios.post("https://sale-it-back.herokuapp.com/home/articles", articulo)
+            .then(res => {
+                return res.data;
+            })
+            .then(Response => {
+                alert("Se registró exitosamente")
+            }).catch(Response => {
+                alert("El registro no fue exitoso")
+            });
+    }
+
+    return (
         <div id="agregarSubasta" className="modal fade" aria-hidden="true">
 
             <div className="modal-dialog">
@@ -14,30 +50,30 @@ export default function Subasta() {
                         </button>
                     </div>
                     <div className="modal-body">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label className="col-form-label">Nombre:</label>
-                                <input type="text" className="form-control" id="nobreArticulo"></input>
+                                <input type="text" className="form-control" name="nombre" onChange={(e) => setNombre(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Descripción:</label>
-                                <input type="text" className="form-control" id="desArticulo"></input>
+                                <input type="text" className="form-control" name="descripcion" onChange={(e) => setDescripcion(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Fecha fin de la oferta:</label>
-                                <input type="date" className="form-control" id="fechaFin"></input>
+                                <input type="date" className="form-control" name="fechaFin" required></input>
                             </div>
 
                             <div className="form-group">
                                 <div className="form-field">
                                     <div className="select-wrap">
                                         <div className="icon"><span className="fa fa-chevron-down"></span></div>
-                                        <select id="estadoDeuso" className="form-control">
-                                            <option value="" className="option-color">Estado de uso</option>
-                                            <option value="" className="option-color">Nuevo</option>
-                                            <option value="" className="option-color">Usado</option>
+                                        <select name="estadoDeUso" className="form-control" onChange={(e) => setEstadoDeUso(e.target.value)} required>
+                                            <option value="Nuevo" className="option-color">Estado de uso</option>
+                                            <option value="Nuevo" className="option-color">Nuevo</option>
+                                            <option value="Usado" className="option-color">Usado</option>
                                         </select>
                                     </div>
                                 </div>
@@ -45,33 +81,26 @@ export default function Subasta() {
 
                             <div className="form-group">
                                 <label className="col-form-label">Precio mínimo de la orferta:</label>
-                                <input type="text" className="form-control" id="precioBase"></input>
+                                <input type="text" className="form-control" name="precioMinimo" onChange={(e) => setPrecioMinimo(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Dimensiones:</label>
-                                <input type="text" className="form-control" id="dimensiones"></input>
+                                <input type="text" className="form-control" name="dimensiones" onChange={(e) => setDimensiones(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Tu ubicación:</label>
-                                <input type="text" className="form-control" id="ubicacion"></input>
+                                <input type="text" className="form-control" name="ubicacion" onChange={(e) => setUbicacion(e.target.value)} required></input>
                             </div>
 
-                            <div className="form-group">
-                                <label className="col-form-label">Imagen:</label>
-                                <input type="text" className="form-control" id="imagen"></input>
-                            </div>
-
-                        </form>
+                            <div className="modal-footer">
+                        <button type="submit" className="btn btn-primary">Agregar</button>
                     </div>
-
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-primary">Agregar</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     );
-
 }

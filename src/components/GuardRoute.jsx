@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect, Route} from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 
 class GuardRoute extends React.Component {
     render() {
@@ -11,14 +11,14 @@ class GuardRoute extends React.Component {
         } = this.props;
 
         if (type === "private" && !isLogged) {
-            return <Redirect to="/"/>;
+            return <Redirect to="/" />;
 
         } else if (type === "public") {
             console.log(isLogged)
             if (!isLogged) {
-                return <Redirect to="/"/>;
+                return <Redirect to="/" />;
             } else {
-                return <Redirect to="/inicio"/>;
+                return <Redirect to="/inicio" />;
             }
 
         }

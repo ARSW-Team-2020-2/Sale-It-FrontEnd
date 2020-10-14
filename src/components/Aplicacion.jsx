@@ -15,7 +15,7 @@ export default function Aplicacion() {
                 <div className="container">
                     <a className="navbar-brand" href="index.html">Saleit <span>Subastas</span></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="oi oi-menu"> </span> Menu
                     </button>
 
@@ -27,7 +27,7 @@ export default function Aplicacion() {
                             <li className="nav-item"><a href="#misSubastas" className="nav-link">Mis Subastas</a></li>
                             <li className="nav-item"><a href="#informacion" className="nav-link">Contacto</a></li>
                             <li className="nav-item"><a href="#cerrarSesion" className="nav-link"
-                                                        onClick={(e) => signOut()}>Salir</a></li>
+                                onClick={(e) => signOut()}>Salir</a></li>
                         </ul>
                     </div>
                 </div>

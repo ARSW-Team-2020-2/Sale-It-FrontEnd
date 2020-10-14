@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import Swal from 'sweetalert2';
-
-
 
 export default function SignIn() {
 
@@ -28,15 +26,21 @@ export default function SignIn() {
 
                 } else {
                     Swal.fire({
-                        title: 'Error!',
+                        title: 'Ops!',
                         text: 'Contraseña incorrecta',
                         icon: 'error',
                         confirmButtonText: 'Cool'
                     })
                 }
             }).catch(Response => {
-            console.log(Response)
-        });
+                console.log(Response)
+                Swal.fire({
+                    title: 'Ops!',
+                    text: 'Usuario no válido',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            });
     }
 
 
@@ -51,14 +55,14 @@ export default function SignIn() {
                                 <div className="col-md-12">
                                     <div className="form-group">
                                         <input type="email" className="form-control" placeholder="Correo" name="email"
-                                               onChange={(e) => setEmail(e.target.value)} required></input>
+                                            onChange={(e) => setEmail(e.target.value)} required></input>
                                     </div>
                                 </div>
                                 <div className="col-md-12">
                                     <div className="form-group">
                                         <input type="password" className="form-control" placeholder="Contraseña"
-                                               name="password" onChange={(e) => setPassword(e.target.value)}
-                                               required></input>
+                                            name="password" onChange={(e) => setPassword(e.target.value)}
+                                            required></input>
                                     </div>
                                 </div>
 

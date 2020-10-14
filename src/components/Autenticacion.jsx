@@ -10,11 +10,11 @@ export default function Autenticacion() {
                     <ul className="nav nav-tabs nav-justified" id="myTab" role="tablist">
                         <li className="nav-item">
                             <a className="nav-link" id="home-tab" data-toggle="tab" href="#TabSignIn" role="tab"
-                               aria-controls="home" aria-selected="false">Ingresa</a>
+                                aria-controls="home" aria-selected="false">Ingresa</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active" id="profile-tab" data-toggle="tab" href="#TabSignUp"
-                               role="tab" aria-controls="profile" aria-selected="true">Regístrate</a>
+                                role="tab" aria-controls="profile" aria-selected="true">Regístrate</a>
                         </li>
                     </ul>
                     <div className="tab-content" id="myTabContent">
@@ -22,7 +22,7 @@ export default function Autenticacion() {
                             <SignIn></SignIn>
                         </div>
                         <div className="tab-pane fade show active" id="TabSignUp" role="tabpanel"
-                             aria-labelledby="profile-tab">
+                            aria-labelledby="profile-tab">
                             <SignUp></SignUp>
                         </div>
                     </div>

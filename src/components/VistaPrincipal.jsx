@@ -9,11 +9,11 @@ export default function VistaPrincipal() {
 
     return (
         <div>
-            <Aplicacion/>
-            <About/>
-            <Categorias/>
-            <MisSubastas/>
-            <ContactPanel/>
+            <Aplicacion />
+            <About />
+            <Categorias />
+            <MisSubastas />
+            <ContactPanel />
         </div>
     );
 }
