@@ -3,15 +3,33 @@ import Subasta from './Subasta';
 
 export default function Categorias() {
 
-    const asignarA = (e) => { localStorage.setItem("categoria", "Hogar y Cocina") }
-    const asignarB = (e) => { localStorage.setItem("categoria", "Salud y Belleza") }
-    const asignarC = (e) => { localStorage.setItem("categoria", "Bebidas y Licores") }
-    const asignarD = (e) => { localStorage.setItem("categoria", "Carros y Motos") }
-    const asignarE = (e) => { localStorage.setItem("categoria", "Sección Infantil") }
-    const asignarF = (e) => { localStorage.setItem("categoria", "Ropa y Accesorios") }
-    const asignarG = (e) => { localStorage.setItem("categoria", "Muebles y Jardineria") }
-    const asignarH = (e) => { localStorage.setItem("categoria", "Sección de Tecnología") }
-    const asignarI = (e) => { localStorage.setItem("categoria", "Sección Deportiva") }
+    const asignarA = (e) => {
+        localStorage.setItem("categoria", 1)
+    }
+    const asignarB = (e) => {
+        localStorage.setItem("categoria", 2)
+    }
+    const asignarC = (e) => {
+        localStorage.setItem("categoria", 3)
+    }
+    const asignarD = (e) => {
+        localStorage.setItem("categoria", 4)
+    }
+    const asignarE = (e) => {
+        localStorage.setItem("categoria", 5)
+    }
+    const asignarG = (e) => {
+        localStorage.setItem("categoria", 6)
+    }
+    const asignarH = (e) => {
+        localStorage.setItem("categoria", 7)
+    }
+    const asignarI = (e) => {
+        localStorage.setItem("categoria", 8)
+    }
+    const asignarF = (e) => {
+        localStorage.setItem("categoria", 9)
+    }
 
     return (
 
@@ -31,7 +49,9 @@ export default function Categorias() {
                             <h3 className="heading">Hogar y Cocina</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarA()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarA()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -43,7 +63,9 @@ export default function Categorias() {
                             <h3 className="heading">Salud y Belleza</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarB()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarB()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -55,7 +77,9 @@ export default function Categorias() {
                             <h3 className="heading">Bebidas y Licores</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarC()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta" >Ofertar Artículo</button>
+                                <button onClick={(e) => asignarC()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -70,7 +94,9 @@ export default function Categorias() {
                             <h3 className="heading">Carros y Motos</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarD()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarD()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -82,7 +108,9 @@ export default function Categorias() {
                             <h3 className="heading">Sección Infantil</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarE()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarE()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -94,7 +122,9 @@ export default function Categorias() {
                             <h3 className="heading">Ropa y Accesorios</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarF()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarF()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -109,7 +139,9 @@ export default function Categorias() {
                             <h3 className="heading">Muebles y Jardinería</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarG()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarG()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -121,7 +153,9 @@ export default function Categorias() {
                             <h3 className="heading">Sección de Tecnología</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarH()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarH()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -133,7 +167,9 @@ export default function Categorias() {
                             <h3 className="heading">Sección Deportiva</h3>
                             <p className="clearfix">
                                 <button className="btn btn-primary">Ver Artículos</button>
-                                <button onClick={(e) => asignarI()} className="btn btn-primary ml-3" data-toggle="modal" data-target="#agregarSubasta">Ofertar Artículo</button>
+                                <button onClick={(e) => asignarI()} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#agregarSubasta">Ofertar Artículo
+                                </button>
 
                             </p>
                         </div>
