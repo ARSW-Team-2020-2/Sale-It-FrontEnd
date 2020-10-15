@@ -3,6 +3,10 @@ import Subasta from './Subasta';
 
 export default function Categorias() {
 
+    const verArticulos = (e) => {
+        window.location.href = "/articulos";
+    }
+
     const asignarA = (e) => {
         localStorage.setItem("categoria", 1)
     }
@@ -48,7 +52,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Hogar y Cocina</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()}className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarA()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -62,7 +66,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Salud y Belleza</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarB()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -76,7 +80,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Bebidas y Licores</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarC()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -93,7 +97,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Carros y Motos</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarD()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -107,7 +111,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Sección Infantil</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarE()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -121,7 +125,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Ropa y Accesorios</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarF()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -138,7 +142,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Muebles y Jardinería</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarG()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -152,7 +156,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Sección de Tecnología</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarH()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
@@ -166,7 +170,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Sección Deportiva</h3>
                             <p className="clearfix">
-                                <button className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarI()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>

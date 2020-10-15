@@ -1,6 +1,15 @@
 import React from 'react';
 
 export default function MisSubastas() {
+
+    const misSubastas = (e) => {
+        window.location.href = "/misSubastas";
+    }
+
+    const misParticipaciones = (e) => {
+        window.location.href = "/misParticipaciones";
+    }
+
     return (
 
         <div id="misSubastas">
@@ -13,8 +22,8 @@ export default function MisSubastas() {
             <div className="auction-background">
                 <div className="wrap-about py-5 text-center">
                     <row>
-                        <button className="btn btn-primary">Mis participaciones</button>
-                        <button className="btn btn-primary ml-3">Mis subastas creadas</button>
+                        <button onClick={(e) => misParticipaciones()} className="btn btn-primary">Mis participaciones</button>
+                        <button onClick={(e) => misSubastas()} className="btn btn-primary ml-3">Mis subastas creadas</button>
                     </row>
                 </div>
             </div>
