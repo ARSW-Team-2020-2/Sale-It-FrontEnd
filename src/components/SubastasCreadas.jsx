@@ -1,11 +1,7 @@
-import React, {useState} from 'react';
-import Axios from "axios";
-import Swal from "sweetalert2";
+import React from 'react';
 import OwnAuctions from "./OwnAuctions";
 
 export default function SubastasCreadas() {
-
-    let userID = localStorage.getItem("id");
 
     const signOut = (e) => {
         localStorage.removeItem('isLoggedIn');
@@ -17,34 +13,6 @@ export default function SubastasCreadas() {
     const volver = (e) => {
         window.location.href = "/inicio";
     }
-
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-
-
-    Axios.get("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions")
-        .then(res => {
-            var APIResponse = res.data;
-            console.log(APIResponse);
-            return APIResponse;
-        })
-        .then(Response => {
-
-
-        }).catch(Response => {
-        console.log(Response)
-        Swal.fire({
-            title: 'Ops!',
-            text: 'Usuario no válido',
-            icon: 'error',
-            confirmButtonText: 'Ok'
-        })
-    });
-
-
-
 
     return (
         <div id="misSubastasCreadas">
@@ -86,7 +54,7 @@ function Fondo() {
                     <div className="text w-100 mt-5 text-center">
                         <div>
 
-                            <table className="table table-striped table-dark" >
+                            <table id="tablaSubastasCreadas" className="table table-dark table-hover">
                                 <thead>
                                 <tr>
                                     <th scope="col">Artículo</th>
@@ -98,6 +66,7 @@ function Fondo() {
                                     <th scope="col">Fecha de Fin</th>
                                     <th scope="col">Dimensiones</th>
                                     <th scope="col">Ubicación</th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
