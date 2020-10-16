@@ -42,10 +42,6 @@ export default function Subasta() {
             fechaFin: finalDate,
             articulo: articulo
         }
-
-
-        console.log(subasta);
-
         Axios.post("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions", subasta)
             .then(res => {
                 return res.data;
@@ -66,6 +62,11 @@ export default function Subasta() {
         });
     }
 
+
+    function limpiar() {
+
+    }
+
     return (
         <div id="agregarSubasta" className="modal fade" aria-hidden="true">
 
@@ -78,7 +79,7 @@ export default function Subasta() {
                         </button>
                     </div>
                     <div className="modal-body">
-                        <form onSubmit={handleSubmit}>
+                        <form id="crearSubasta" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label className="col-form-label">Nombre:</label>
                                 <input type="text" className="form-control" name="nombre"
@@ -119,7 +120,8 @@ export default function Subasta() {
 
                             <div className="form-group">
                                 <label className="col-form-label">Precio mínimo de la orferta:</label>
-                                <input type="text" className="form-control" name="precioMinimo"
+                                <input type="text" className="form-control" aria-label="precioMinimo"
+                                       placeholder={"$$$"}
                                        onChange={(e) => setPrecioMinimo(e.target.value)} required></input>
                             </div>
 
@@ -136,7 +138,7 @@ export default function Subasta() {
                             </div>
 
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary">Agregar</button>
+                                <button type="submit" className="btn btn-primary" onClick={limpiar()}>Agregar</button>
                             </div>
                         </form>
                     </div>
@@ -145,3 +147,4 @@ export default function Subasta() {
         </div>
     );
 }
+
