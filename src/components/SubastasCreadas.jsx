@@ -49,18 +49,18 @@ function Fondo() {
 
                 <div className="col-md-12">
                     <div className="heading-section">
-                        <h2 className="mb-4 color-white text-center">Mis Subastas</h2>
+                        <br/>
+                        <br/>
                     </div>
                     <div className="text w-100 mt-5 text-center">
                         <div>
-
+                            <h2 className="mb-4 color-white text-left">Mis subastas creadas:</h2>
                             <table id="tablaSubastasCreadas" className="table table-dark table-hover">
                                 <thead>
                                 <tr>
                                     <th scope="col">Artículo</th>
                                     <th scope="col">Descripción</th>
                                     <th scope="col">Precio Mínimo</th>
-                                    <th scope="col">Categoría</th>
                                     <th scope="col">Estado de Uso</th>
                                     <th scope="col">Fecha de Inicio</th>
                                     <th scope="col">Fecha de Fin</th>
@@ -70,7 +70,7 @@ function Fondo() {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <OwnAuctions></OwnAuctions>
+                                <OwnAuctions></OwnAuctions>
                                 </tbody>
                             </table>
 

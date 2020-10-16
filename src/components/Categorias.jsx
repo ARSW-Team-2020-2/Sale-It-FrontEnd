@@ -156,7 +156,7 @@ export default function Categorias() {
                         <div className="text-center px-4 pt-3 pb-4">
                             <h3 className="heading">Sección de Tecnología</h3>
                             <p className="clearfix">
-                                <button onClick={(e) => verArticulos()} className="btn btn-primary">Ver Artículos</button>
+                                <button onClick={(e) => verArticulos()}  className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarH()} className="btn btn-primary ml-3" data-toggle="modal"
                                         data-target="#agregarSubasta">Ofertar Artículo
                                 </button>

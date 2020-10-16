@@ -1,4 +1,5 @@
 import React from 'react';
+import ArticlesByCategory from "./ArticlesByCategory";
 
 export default function VerArticulos() {
 
@@ -19,16 +20,16 @@ export default function VerArticulos() {
                 <div className="container">
                     <a className="navbar-brand" href="index.html">Saleit <span>Subastas</span></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="oi oi-menu"> </span> Menu
                     </button>
 
                     <div className="collapse navbar-collapse" id="ftco-nav">
                         <ul className="navbar-nav ml-auto">
-                        <li className="nav-item"><a href="#volver" className="nav-link"
-                                onClick={(e) => volver()}>Regresar</a></li>
+                            <li className="nav-item"><a href="#volver" className="nav-link"
+                                                        onClick={(e) => volver()}>Regresar</a></li>
                             <li className="nav-item"><a href="#cerrarSesion" className="nav-link"
-                                onClick={(e) => signOut()}>Salir</a></li>
+                                                        onClick={(e) => signOut()}>Salir</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,39 +46,32 @@ function Fondo() {
 
 
             <div className="row mt-5">
-            
-                <div className="col-md-12">
-                <div className="heading-section">
-                <h2 className="mb-4 color-white text-center">Artículos</h2>
 
-                        </div>
+                <div className="col-md-12">
+                    <div className="heading-section">
+                        <h2 className="mb-4 color-white text-center">Artículos</h2>
+
+                    </div>
                     <div className="text w-100 mt-5 text-center">
                         <div>
-                      
-            <table className="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Artículo</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Precio Mínimo</th>
-                        <th scope="col">Categoría</th>
-                        <th scope="col">Estado de Uso</th>
-                        <th scope="col">Fecha de Inicio</th>
-                        <th scope="col">Fecha de Fin</th>
-                        <th scope="col">Dimensiones</th>
-                        <th scope="col">Ubicación</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">algo</th>
-                    </tr>
-                    <tr>
-                        <th scope="row">ggg</th>
-                    </tr>
-                </tbody>
-            </table>
-      
+                            <h2 className="mb-4 color-white text-left">Categoría: <strong></strong></h2>
+                            <table className="table table-striped table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Artículo</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Precio Mínimo</th>
+                                    <th scope="col">Estado de Uso</th>
+                                    <th scope="col">Dimensiones</th>
+                                    <th scope="col">Ubicación</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <ArticlesByCategory></ArticlesByCategory>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
