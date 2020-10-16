@@ -6,7 +6,7 @@ import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
 
 
 function Pujar() {
-    let userID = localStorage.getItem("id");
+    //let userID = localStorage.getItem("id");
 
     // Axios.post("https://sale-it-back.herokuapp.com/home/users/" + userID + "/" + subastaID, puja)
     //     .then(res => {
@@ -38,20 +38,28 @@ class ArticlesByCategory extends Component {
     }
 
     async componentDidMount() {
-        let categoriaID = localStorage.getItem("categoria");
-        console.log(localStorage);
-        console.log(categoriaID);
-        Axios.get("https://sale-it-back.herokuapp.com/home/categories/" + categoriaID + "/articles")
+        let verCategoria = localStorage.getItem("verCategoria");
+        Axios.get("https://sale-it-back.herokuapp.com/home/categories/" + verCategoria + "/articles")
             .then(res => {
                 var APIResponse = res.data;
-                this.setState({ items: APIResponse });
-                return APIResponse;
+                if (APIResponse.length === 0) {
+                    Swal.fire({
+                        title: 'Ops!',
+                        text: 'Aún no hay artículos en esta categoría',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
+                } 
+                else {
+                    this.setState({ items: APIResponse });
+                    return APIResponse;
+                }
             })
             .catch(Response => {
                 console.log(Response)
                 Swal.fire({
                     title: 'Ops!',
-                    text: 'Error al obtener los artículos',
+                    text: 'Ocurrió un error al consultar los artículos',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
