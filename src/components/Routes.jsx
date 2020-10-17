@@ -6,6 +6,7 @@ import SubastasCreadas from './SubastasCreadas';
 import GuardRoute from './GuardRoute';
 import MisParticipaciones from './MisParticipaciones';
 import VerArticulos from './VerArticulos';
+import EditarSubasta from './EditarSubasta';
 
 
 class Routes extends React.Component {
@@ -16,6 +17,7 @@ class Routes extends React.Component {
                 <GuardRoute path="/misSubastas" type="private" component={SubastasCreadas}></GuardRoute>
                 <GuardRoute path="/misParticipaciones" type="private" component={MisParticipaciones}></GuardRoute>
                 <GuardRoute path="/articulos" type="private" component={VerArticulos}></GuardRoute>
+                <GuardRoute path="/editarSubasta" type="private" component={EditarSubasta}></GuardRoute>
                 <Route path="/" type="public" component={Autenticacion}></Route>
             </Switch>
         );
