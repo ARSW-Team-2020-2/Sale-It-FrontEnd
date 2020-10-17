@@ -52,6 +52,7 @@ export default function Subasta() {
                     'Artículo registrado',
                     'success'
                 )
+                limpiar();
             }).catch(Response => {
             Swal.fire({
                 title: 'Ops!',
@@ -59,12 +60,13 @@ export default function Subasta() {
                 icon: 'error',
                 confirmButtonText: 'Ok'
             })
+            limpiar();
         });
     }
 
 
     function limpiar() {
-
+        document.getElementById("tablaCrearSubasta").submit();
     }
 
     return (
@@ -79,7 +81,7 @@ export default function Subasta() {
                         </button>
                     </div>
                     <div className="modal-body">
-                        <form id="crearSubasta" onSubmit={handleSubmit}>
+                        <form id="tablaCrearSubasta" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label className="col-form-label">Nombre:</label>
                                 <input type="text" className="form-control" name="nombre"
@@ -138,7 +140,8 @@ export default function Subasta() {
                             </div>
 
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary" onClick={limpiar()}>Agregar</button>
+                                <button type="submit" className="btn btn-primary" >Agregar
+                                </button>
                             </div>
                         </form>
                     </div>

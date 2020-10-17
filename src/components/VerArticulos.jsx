@@ -40,6 +40,28 @@ export default function VerArticulos() {
 }
 
 function Fondo() {
+    let numeroCategoria = localStorage.getItem("verCategoria");
+    if (numeroCategoria == 1) {
+        localStorage.setItem("inicialesCategorias", "Hogar y Cocina");
+    } else if (numeroCategoria == 2) {
+        localStorage.setItem("inicialesCategorias", "Salud y Belleza");
+    } else if (numeroCategoria == 3) {
+        localStorage.setItem("inicialesCategorias", "Bebidas y Licores");
+    } else if (numeroCategoria == 4) {
+        localStorage.setItem("inicialesCategorias", "Carros y Motos");
+    } else if (numeroCategoria == 5) {
+        localStorage.setItem("inicialesCategorias", "Sección Infantil");
+    } else if (numeroCategoria == 6) {
+        localStorage.setItem("inicialesCategorias", "Muebles y Jardinería");
+    } else if (numeroCategoria == 7) {
+        localStorage.setItem("inicialesCategorias", "Sección de Tecnología");
+    } else if (numeroCategoria == 8) {
+        localStorage.setItem("inicialesCategorias", "Sección Deportiva");
+    } else if (numeroCategoria == 9) {
+        localStorage.setItem("inicialesCategorias", "Ropa y Accesorios");
+    }
+
+    var nombreCategoria = localStorage.getItem("inicialesCategorias")
     return (
 
         <div className="overlay home-background justify-content-center">
@@ -54,7 +76,8 @@ function Fondo() {
                     </div>
                     <div className="text w-100 mt-5 text-center">
                         <div>
-                            <h2 className="mb-4 color-white text-left">Categoría: <strong></strong></h2>
+                            <h2 className="mb-4 color-white text-left">Categoría: <strong>{nombreCategoria}</strong>
+                            </h2>
                             <table className="table table-striped table-dark">
                                 <thead>
                                 <tr>
@@ -68,7 +91,7 @@ function Fondo() {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <ArticlesByCategory></ArticlesByCategory>
+                                <ArticlesByCategory></ArticlesByCategory>
                                 </tbody>
                             </table>
 
