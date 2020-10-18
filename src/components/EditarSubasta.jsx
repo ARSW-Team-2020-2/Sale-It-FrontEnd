@@ -1,75 +1,53 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
-import Swal from "sweetalert2";
-
 
 export default function EditarSubasta() {
-
-    const signOut = (e) => {
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('userId');
-        localStorage.removeItem('typeUserLogged');
-        window.location.href = "/";
-    }
-
-    const volver = (e) => {
-        window.location.href = "/misSubastas";
-    }
-
-
-    const modificar = (e) => {
-
-        let subastaId = localStorage.getItem("idSubasta");
-
-        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/" + subastaId)
-            .then(res => {
-                //set de lo que neceistan
-                var APIResponse = res.data;
-                console.log(APIResponse);
-                this.setState({ items: APIResponse });
-                return APIResponse;
-            })
-            .catch(Response => {
-                console.log(Response)
-                Swal.fire({
-                    title: 'Ops!',
-                    text: 'No hay subast',
-                    icon: 'error',
-                    confirmButtonText: 'Ok'
-                })
-            });
-    }
-
+    
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                <div className="container">
-                    <a className="navbar-brand" href="index.html">Saleit <span>Subastas</span></a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="oi oi-menu"> </span> Menu
-        </button>
+        <div id="editarSubasta" className="modal fade" aria-hidden="true">
 
-                    <div className="collapse navbar-collapse" id="ftco-nav">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item"><a href="#volver" className="nav-link"
-                                onClick={(e) => volver()}>Regresar</a></li>
-                            <li className="nav-item"><a href="#cerrarSesion" className="nav-link"
-                                onClick={(e) => signOut()}>Salir</a></li>
-                        </ul>
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h4 className="modal-title">Modifica tu subasta:</h4>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        <form id="tablaModificarSubasta">
+                            <div className="form-group">
+                            <h5 className="text-left">Nombre:</h5>
+                                <input type="text" className="form-control" required></input>
+                            </div>
+                            <div className="form-group">
+                                <h5 className="text-left">Descripción:</h5>
+                                <input type="text" className="form-control" name="descripcion" required></input>
+                            </div>
+                            <div className="form-group">
+                            <h5 className="text-left">Precio Mínimo:</h5>
+                                <input type="text" className="form-control" name="nombre" required></input>
+                            </div>
+                            <div className="form-group">
+                                <h5 className="text-left">Estado de uso:</h5>
+                                <input type="text" className="form-control" name="descripcion" required></input>
+                            </div>
+                            <div className="form-group">
+                                <h5 className="text-left">Dimensiones:</h5>
+                                <input type="text" className="form-control" name="descripcion" required></input>
+                            </div>
+                            <div className="form-group">
+                                <h5 className="text-left">Ubicación:</h5>
+                                <input type="text" className="form-control" name="descripcion" required></input>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="submit" className="btn btn-primary" >Modificar
+                            </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </nav>
-            <Fondo></Fondo>
+            </div>
         </div>
     );
 }
 
-function Fondo() {
-    return (
-
-        <div className="overlay home-background justify-content-center">
-            <h2>formulario</h2>
-        </div>
-    );
-}

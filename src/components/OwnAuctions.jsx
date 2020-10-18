@@ -16,6 +16,38 @@ class OwnAuctions extends Component {
         this.editar = this.editar.bind(this);
     }
 
+    editar(item) {
+        localStorage.setItem("idSubasta", item);
+
+        let subastaId = localStorage.getItem("idSubasta");
+
+        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/" + subastaId)
+            .then(res => {
+                var APIResponse = res.data;
+                console.log(APIResponse);
+                this.setState({ items: APIResponse });
+                
+                //set
+                localStorage.setItem("nombreInicial", APIResponse.nombre); 
+                localStorage.setItem("descripcionInicial", APIResponse.descripcion); 
+                localStorage.setItem("precioMinimoInicial", APIResponse.precioMinimo); 
+                localStorage.setItem("estadoDeUsoInicial", APIResponse.estadoDeUso); 
+                localStorage.setItem("dimesionesInicial", APIResponse.dimensiones); 
+                localStorage.setItem("ubicacionInicial", APIResponse.ubicacion); 
+
+                return APIResponse;
+            })
+            .catch(Response => {
+                console.log(Response)
+                Swal.fire({
+                    title: 'Ops!',
+                    text: 'No hay subast',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            });
+    }
+
     eliminar(item) {
         let userID = localStorage.getItem("id");
         Axios.delete("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions/" + item.id)
@@ -41,12 +73,6 @@ class OwnAuctions extends Component {
         });
 
     }
-
-    editar(item) {
-        localStorage.setItem("idSubasta", item); 
-        window.location.href = "/editarSubasta";
-    }
-
 
     async componentDidMount() {
         let userID = localStorage.getItem("id");
@@ -81,9 +107,12 @@ class OwnAuctions extends Component {
                             <th scope="row">{item.fechaFin.substr(0, 16)}</th>
                             <th scope="row">{item.articulo.dimensiones}</th>
                             <th scope="row">{item.articulo.ubicacion}</th>
-                            <th scope="row"><FontAwesomeIcon onClick={(e) => this.editar(item.articulo.id)} icon={faEdit}/></th>
-                            <th scope="row"><FontAwesomeIcon onClick={() => this.eliminar(item)} icon={faTrashAlt}/></th>
+                            <th scope="row"><button onClick={(e) => this.editar(item.articulo.id)} className="btn btn-primary ml-3" data-toggle="modal"
+                                        data-target="#editarSubasta"><FontAwesomeIcon  icon={faEdit}/></button></th>
+                            <th scope="row"><button onClick={(e) => this.eliminar(item)} className="btn btn-primary ml-3"><FontAwesomeIcon icon={faTrashAlt}/></button></th>
+                            <EditarSubasta></EditarSubasta>
                         </tr>
+                        
                         
                     );
                 })
