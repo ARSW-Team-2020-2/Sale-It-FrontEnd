@@ -101,7 +101,7 @@ class OwnAuctions extends Component {
                         <tr>
                             <th scope="row">{item.articulo.nombre}</th>
                             <th scope="row">{item.articulo.descripcion}</th>
-                            <th scope="row">{item.articulo.precioMinimo}</th>
+                            <th scope="row">${item.articulo.precioMinimo}</th>
                             <th scope="row">{item.articulo.estadoDeUso}</th>
                             <th scope="row">{item.fechaInicio.substr(0, 16)}</th>
                             <th scope="row">{item.fechaFin.substr(0, 16)}</th>

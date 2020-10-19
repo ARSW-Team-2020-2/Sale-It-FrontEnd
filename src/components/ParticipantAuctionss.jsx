@@ -63,13 +63,14 @@ class ParticipantAuctions extends Component {
                     <tr>
                         <th scope="row">{item.articulo.nombre}</th>
                         <th scope="row">{item.articulo.descripcion}</th>
-                        <th scope="row">{item.articulo.precioMinimo}</th>
+                        <th scope="row">${item.articulo.precioMinimo}</th>
                         <th scope="row">{item.articulo.estadoDeUso}</th>
                         <th scope="row">{item.fechaInicio.substr(0, 16)}</th>
                         <th scope="row">{item.fechaFin.substr(0,16)}</th>
                         <th scope="row">{item.articulo.dimensiones}</th>
                         <th scope="row">{item.articulo.ubicacion}</th>
-                        <th scope="row"><th scope="row"><FontAwesomeIcon onClick={VerPujas} icon={faEye} /></th></th>
+                        <th scope="row">${item.pujas[i].monto}</th>
+                        {/*<th scope="row"><th scope="row"><FontAwesomeIcon onClick={VerPujas} icon={faEye} /></th></th>*/}
                     </tr>
                 );
             })

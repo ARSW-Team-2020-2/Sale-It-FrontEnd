@@ -66,7 +66,7 @@ function Fondo() {
                                     <th scope="col">Fecha de Fin</th>
                                     <th scope="col">Dimensiones</th>
                                     <th scope="col">Ubicación</th>
-                                    <th scope="col">Pujas</th>
+                                    <th scope="col">Monto ofertado</th>
 
                                 </tr>
                                 </thead>
