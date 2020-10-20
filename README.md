@@ -3,6 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## _Despliegue en Heroku_ 🚀
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://sale-it.herokuapp.com/)
 
+
+_Repositorio Back:_ https://github.com/ARSW-Team-2020-2/SaleIt
+
 ## Available Scripts
 
 In the project directory, you can run:
