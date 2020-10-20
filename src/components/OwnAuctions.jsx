@@ -16,32 +16,32 @@ class OwnAuctions extends Component {
         this.editar = this.editar.bind(this);
     }
 
-    editar(item) {
-        localStorage.setItem("idSubasta", item);
+    async editar(item) {
+        localStorage.setItem("idSubasta", item.id);
 
         let subastaId = localStorage.getItem("idSubasta");
 
-        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/" + subastaId)
+        await Axios.get("https://sale-it-back.herokuapp.com/home/auctions/" + subastaId)
             .then(res => {
-                var APIResponse = res.data;
+                const APIResponse = [res.data];
                 console.log(APIResponse);
-                this.setState({ items: APIResponse });
-                
-                //set
-                localStorage.setItem("nombreInicial", APIResponse.nombre); 
-                localStorage.setItem("descripcionInicial", APIResponse.descripcion); 
-                localStorage.setItem("precioMinimoInicial", APIResponse.precioMinimo); 
-                localStorage.setItem("estadoDeUsoInicial", APIResponse.estadoDeUso); 
-                localStorage.setItem("dimesionesInicial", APIResponse.dimensiones); 
-                localStorage.setItem("ubicacionInicial", APIResponse.ubicacion); 
+                this.setState({items: APIResponse});
 
-                return APIResponse;
+                console.log("items: ", this.state.items)
+
+                //set
+                localStorage.setItem("nombreInicial", APIResponse.nombre);
+                localStorage.setItem("descripcionInicial", APIResponse.descripcion);
+                localStorage.setItem("precioMinimoInicial", APIResponse.precioMinimo);
+                localStorage.setItem("estadoDeUsoInicial", APIResponse.estadoDeUso);
+                localStorage.setItem("dimesionesInicial", APIResponse.dimensiones);
+                localStorage.setItem("ubicacionInicial", APIResponse.ubicacion);
             })
             .catch(Response => {
                 console.log(Response)
                 Swal.fire({
                     title: 'Ops!',
-                    text: 'No hay subast',
+                    text: 'Error al cargar la subasta',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
@@ -95,10 +95,12 @@ class OwnAuctions extends Component {
     }
 
     render() {
+
         return (
-                this.state.items.map((item, i) => {
+                this.state.items.map((item, index) => {
                     return (
                         <tr>
+                            {console.log("render item: ",item)}
                             <th scope="row">{item.articulo.nombre}</th>
                             <th scope="row">{item.articulo.descripcion}</th>
                             <th scope="row">${item.articulo.precioMinimo}</th>
@@ -107,16 +109,20 @@ class OwnAuctions extends Component {
                             <th scope="row">{item.fechaFin.substr(0, 16)}</th>
                             <th scope="row">{item.articulo.dimensiones}</th>
                             <th scope="row">{item.articulo.ubicacion}</th>
-                            <th scope="row"><button onClick={(e) => this.editar(item.articulo.id)} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#editarSubasta"><FontAwesomeIcon  icon={faEdit}/></button></th>
-                            <th scope="row"><button onClick={(e) => this.eliminar(item)} className="btn btn-primary ml-3"><FontAwesomeIcon icon={faTrashAlt}/></button></th>
-                            <EditarSubasta></EditarSubasta>
+                            <th scope="row">
+                                <button onClick={(e) => this.editar(item)} className="btn btn-primary ml-3"
+                                        data-toggle="modal" data-target="#editarSubasta"><FontAwesomeIcon
+                                    icon={faEdit}/>
+                                </button>
+                            </th>
+                            <th scope="row">
+                                <button onClick={(e) => this.eliminar(item)} className="btn btn-primary ml-3">
+                                    <FontAwesomeIcon icon={faTrashAlt}/></button>
+                            </th>
+                            <EditarSubasta item = {item}></EditarSubasta>
                         </tr>
-                        
-                        
                     );
                 })
-
         )
     }
 

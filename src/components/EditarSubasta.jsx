@@ -1,7 +1,41 @@
 import React, { useState } from 'react';
+import Axios from "axios";
+import Swal from "sweetalert2";
 
-export default function EditarSubasta() {
-    
+
+function update(){
+    /*
+    localStorage.setItem("idSubasta", item.id);
+    let subastaId = localStorage.getItem("idSubasta");
+
+    Axios.put("https://sale-it-back.herokuapp.com/home/auctions/" + subastaId)
+        .then(res => {
+            const APIResponse = [res.data];
+
+            //set
+            localStorage.setItem("nombreInicial", APIResponse.nombre);
+            localStorage.setItem("descripcionInicial", APIResponse.descripcion);
+            localStorage.setItem("precioMinimoInicial", APIResponse.precioMinimo);
+            localStorage.setItem("estadoDeUsoInicial", APIResponse.estadoDeUso);
+            localStorage.setItem("dimesionesInicial", APIResponse.dimensiones);
+            localStorage.setItem("ubicacionInicial", APIResponse.ubicacion);
+        })
+        .catch(Response => {
+            console.log(Response)
+            Swal.fire({
+                title: 'Ops!',
+                text: 'Error al cargar la subasta',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+        });
+
+     */
+}
+
+export default function EditarSubasta(props) {
+    const { item } = props;
+    console.log("item editar: ",item)
     return (
         <div id="editarSubasta" className="modal fade" aria-hidden="true">
 
@@ -17,30 +51,30 @@ export default function EditarSubasta() {
                         <form id="tablaModificarSubasta">
                             <div className="form-group">
                             <h5 className="text-left">Nombre:</h5>
-                                <input type="text" className="form-control" required></input>
+                                <input type="text" className="form-control" required value={item.articulo.nombre}></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Descripción:</h5>
-                                <input type="text" className="form-control" name="descripcion" required></input>
+                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.descripcion}></input>
                             </div>
                             <div className="form-group">
                             <h5 className="text-left">Precio Mínimo:</h5>
-                                <input type="text" className="form-control" name="nombre" required></input>
+                                <input type="text" className="form-control" name="nombre" required value={item.articulo.precioMinimo}></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Estado de uso:</h5>
-                                <input type="text" className="form-control" name="descripcion" required></input>
+                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.estadoDeUso}></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Dimensiones:</h5>
-                                <input type="text" className="form-control" name="descripcion" required></input>
+                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.dimensiones}></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Ubicación:</h5>
-                                <input type="text" className="form-control" name="descripcion" required></input>
+                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.ubicacion}></input>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary" >Modificar
+                                <button onClick={update} type="submit" className="btn btn-primary" >Modificar
                             </button>
                             </div>
                         </form>
