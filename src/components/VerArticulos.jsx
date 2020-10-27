@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ArticlesByCategory from "./ArticlesByCategory";
 
 export default function VerArticulos() {
@@ -91,7 +91,7 @@ function Fondo() {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <ArticlesByCategory></ArticlesByCategory>
+                                <ArticlesByCategory/>
                                 </tbody>
                             </table>
 

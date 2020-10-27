@@ -140,7 +140,7 @@ export default function Subasta() {
                             </div>
 
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary" >Agregar
+                                <button type="submit" className="btn btn-primary">Agregar
                                 </button>
                             </div>
                         </form>
