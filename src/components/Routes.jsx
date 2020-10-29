@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Autenticacion from './Autenticacion';
 import VistaPrincipal from './VistaPrincipal';
 import SubastasCreadas from './SubastasCreadas';

@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEdit, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import EditarSubasta from './EditarSubasta';
 
 class OwnAuctions extends Component {
@@ -25,7 +25,7 @@ class OwnAuctions extends Component {
             .then(res => {
                 const APIResponse = [res.data];
                 console.log(APIResponse);
-                this.setState({items: APIResponse});
+                this.setState({ items: APIResponse });
 
                 console.log("items: ", this.state.items)
 
@@ -46,6 +46,7 @@ class OwnAuctions extends Component {
                     confirmButtonText: 'Ok'
                 })
             });
+
     }
 
     eliminar(item) {
@@ -53,7 +54,7 @@ class OwnAuctions extends Component {
         Axios.delete("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions/" + item.id)
             .then(res => {
                 var APIResponse = res.data;
-                this.setState({items: this.state.items.filter(subasta => item.id !== subasta.id)});
+                this.setState({ items: this.state.items.filter(subasta => item.id !== subasta.id) });
                 return APIResponse;
             })
             .then(Response => {
@@ -63,14 +64,14 @@ class OwnAuctions extends Component {
                     'success'
                 )
             }).catch(Response => {
-            console.log(Response)
-            Swal.fire({
-                title: 'Ops!',
-                text: 'Error al eliminar la subasta',
-                icon: 'error',
-                confirmButtonText: 'Ok'
-            })
-        });
+                console.log(Response)
+                Swal.fire({
+                    title: 'Ops!',
+                    text: 'Error al eliminar la subasta',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+            });
 
     }
 
@@ -80,7 +81,7 @@ class OwnAuctions extends Component {
             .then(res => {
                 var APIResponse = res.data;
                 console.log(APIResponse);
-                this.setState({items: APIResponse});
+                this.setState({ items: APIResponse });
                 return APIResponse;
             })
             .catch(Response => {
@@ -97,32 +98,32 @@ class OwnAuctions extends Component {
     render() {
 
         return (
-                this.state.items.map((item, index) => {
-                    return (
-                        <tr>
-                            {console.log("render item: ",item)}
-                            <th scope="row">{item.articulo.nombre}</th>
-                            <th scope="row">{item.articulo.descripcion}</th>
-                            <th scope="row">${item.articulo.precioMinimo}</th>
-                            <th scope="row">{item.articulo.estadoDeUso}</th>
-                            <th scope="row">{item.fechaInicio.substr(0, 16)}</th>
-                            <th scope="row">{item.fechaFin.substr(0, 16)}</th>
-                            <th scope="row">{item.articulo.dimensiones}</th>
-                            <th scope="row">{item.articulo.ubicacion}</th>
-                            <th scope="row">
-                                <button onClick={(e) => this.editar(item)} className="btn btn-primary ml-3"
-                                        data-toggle="modal" data-target="#editarSubasta"><FontAwesomeIcon
-                                    icon={faEdit}/>
-                                </button>
-                            </th>
-                            <th scope="row">
-                                <button onClick={(e) => this.eliminar(item)} className="btn btn-primary ml-3">
-                                    <FontAwesomeIcon icon={faTrashAlt}/></button>
-                            </th>
-                            <EditarSubasta item = {item}></EditarSubasta>
-                        </tr>
-                    );
-                })
+            this.state.items.map((item, index) => {
+                return (
+                    <tr>
+                        {console.log("render item: ", item)}
+                        <th scope="row">{item.articulo.nombre}</th>
+                        <th scope="row">{item.articulo.descripcion}</th>
+                        <th scope="row">${item.articulo.precioMinimo}</th>
+                        <th scope="row">{item.articulo.estadoDeUso}</th>
+                        <th scope="row">{item.fechaInicio.substr(0, 16)}</th>
+                        <th scope="row">{item.fechaFin.substr(0, 16)}</th>
+                        <th scope="row">{item.articulo.dimensiones}</th>
+                        <th scope="row">{item.articulo.ubicacion}</th>
+                        <th scope="row">
+                            <button onClick={(e) => this.editar(item)} className="btn btn-primary"
+                                data-toggle="modal" data-target="#editarSubasta"><FontAwesomeIcon
+                                    icon={faEdit} />
+                            </button>
+                        </th>
+                        <th scope="row">
+                            <button onClick={(e) => this.eliminar(item)} className="btn btn-primary">
+                                <FontAwesomeIcon icon={faTrashAlt} /></button>
+                        </th>
+                        <EditarSubasta item={item}></EditarSubasta>
+                    </tr>
+                );
+            })
         )
     }
 

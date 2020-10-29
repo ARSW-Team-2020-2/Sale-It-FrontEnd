@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import Swal from "sweetalert2";
 
@@ -54,14 +54,14 @@ export default function Subasta() {
                 )
                 limpiar();
             }).catch(Response => {
-            Swal.fire({
-                title: 'Ops!',
-                text: 'El artículo no pudo ser registrado',
-                icon: 'error',
-                confirmButtonText: 'Ok'
-            })
-            limpiar();
-        });
+                Swal.fire({
+                    title: 'Ops!',
+                    text: 'El artículo no pudo ser registrado',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+                limpiar();
+            });
     }
 
 
@@ -85,23 +85,23 @@ export default function Subasta() {
                             <div className="form-group">
                                 <label className="col-form-label">Nombre:</label>
                                 <input type="text" className="form-control" name="nombre"
-                                       onChange={(e) => setNombre(e.target.value)} required></input>
+                                    onChange={(e) => setNombre(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Descripción:</label>
                                 <input type="text" className="form-control" name="descripcion"
-                                       onChange={(e) => setDescripcion(e.target.value)} required></input>
+                                    onChange={(e) => setDescripcion(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Fecha fin de la oferta:</label>
                                 <input id="fechaFinn" placeholder="YYYY-MM-DD" type="date" className="form-control"
-                                       name="fechaFin" onChange={(e) => setFechaFin(e.target.value)} required></input>
+                                    name="fechaFin" onChange={(e) => setFechaFin(e.target.value)} required></input>
 
                                 <label className="col-form-label">Hora de finalización:</label>
                                 <input id="horaFinn" placeholder="HH:mm" type="text" className="form-control"
-                                       name="horaFin" onChange={(e) => setHoraFin(e.target.value)} required></input>
+                                    name="horaFin" onChange={(e) => setHoraFin(e.target.value)} required></input>
                             </div>
 
 
@@ -111,7 +111,7 @@ export default function Subasta() {
                                     <div className="select-wrap">
                                         <div className="icon"><span className="fa fa-chevron-down"></span></div>
                                         <select name="estadoDeUso" className="form-control"
-                                                onChange={(e) => setEstadoDeUso(e.target.value)} required>
+                                            onChange={(e) => setEstadoDeUso(e.target.value)} required>
                                             <option value="Nuevo" className="option-color">Estado de uso</option>
                                             <option value="Nuevo" className="option-color">Nuevo</option>
                                             <option value="Usado" className="option-color">Usado</option>
@@ -123,20 +123,20 @@ export default function Subasta() {
                             <div className="form-group">
                                 <label className="col-form-label">Precio mínimo de la orferta:</label>
                                 <input type="text" className="form-control" aria-label="precioMinimo"
-                                       placeholder={"$$$"}
-                                       onChange={(e) => setPrecioMinimo(e.target.value)} required></input>
+                                    placeholder={"$$$"}
+                                    onChange={(e) => setPrecioMinimo(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Dimensiones:</label>
                                 <input type="text" className="form-control" name="dimensiones"
-                                       onChange={(e) => setDimensiones(e.target.value)} required></input>
+                                    onChange={(e) => setDimensiones(e.target.value)} required></input>
                             </div>
 
                             <div className="form-group">
                                 <label className="col-form-label">Tu ubicación:</label>
                                 <input type="text" className="form-control" name="ubicacion"
-                                       onChange={(e) => setUbicacion(e.target.value)} required></input>
+                                    onChange={(e) => setUbicacion(e.target.value)} required></input>
                             </div>
 
                             <div className="modal-footer">

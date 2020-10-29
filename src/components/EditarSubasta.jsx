@@ -1,41 +1,85 @@
 import React, { useState } from 'react';
 import Axios from "axios";
 import Swal from "sweetalert2";
+import { useEffect } from 'react';
 
+export default function EditarSubasta(props) {
 
-function update(){
-    /*
-    localStorage.setItem("idSubasta", item.id);
-    let subastaId = localStorage.getItem("idSubasta");
+    let userID = localStorage.getItem("id");
 
-    Axios.put("https://sale-it-back.herokuapp.com/home/auctions/" + subastaId)
-        .then(res => {
-            const APIResponse = [res.data];
+    const { item } = props;
 
-            //set
-            localStorage.setItem("nombreInicial", APIResponse.nombre);
-            localStorage.setItem("descripcionInicial", APIResponse.descripcion);
-            localStorage.setItem("precioMinimoInicial", APIResponse.precioMinimo);
-            localStorage.setItem("estadoDeUsoInicial", APIResponse.estadoDeUso);
-            localStorage.setItem("dimesionesInicial", APIResponse.dimensiones);
-            localStorage.setItem("ubicacionInicial", APIResponse.ubicacion);
-        })
-        .catch(Response => {
-            console.log(Response)
+    const [nombre, setNombre] = useState(item.articulo.nombre)
+    const [estadodeuso, setEstadoDeUso] = useState(item.articulo.estadoDeUso)
+    const [descripcion, setDescripcion] = useState(item.articulo.descripcion)
+    const [preciominimo, setPrecioMinimo] = useState(item.articulo.precioMinimo)
+    const [dimensiones, setDimensiones] = useState(item.articulo.dimensiones)
+    const [ubicacion, setUbicacion] = useState(item.articulo.ubicacion)
+    const [fechafin, setFechaFin] = useState(item.fechaFin.substr(0, 16))
+
+    useEffect (()=> {
+
+        setNombre(item.articulo.nombre)
+        setDescripcion(item.articulo.descripcion)
+        setEstadoDeUso(item.articulo.estadoDeUso)
+        setPrecioMinimo(item.articulo.precioMinimo)
+        setDimensiones(item.articulo.dimensiones)
+        setUbicacion(item.articulo.ubicacion)
+        setFechaFin(item.fechaFin.substr(0, 16))
+
+    },[item]
+    )
+  
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const articuloNuevo = {
+            nombre: nombre,
+            estadoDeUso: estadodeuso,
+            descripcion: descripcion,
+            precioMinimo: preciominimo,
+            dimensiones: dimensiones,
+            ubicacion: ubicacion,
+            categoria: item.articulo.categoria,
+            id :item.articulo.id,
+        }
+        const subasta = {
+            id: item.id,
+            fechaInicio: item.fechaInicio.substr(0, 16),
+            fechaFin: fechafin,
+            articuloNuevo: articuloNuevo,
+            vendedor: userID,
+            pujas: item.pujas,
+        }
+        Axios.put("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions", subasta)
+            .then(res => {
+                return res.data;
+            })
+            .then(Response => {
+                Swal.fire(
+                    '¡Enhorabuena!',
+                    'Subasta modificada',
+                    'success'
+                )
+                //desdocuemntar los limpiar cuando sirva el put
+                //limpiar();
+            }).catch(Response => {
+                console.log(Response);
             Swal.fire({
                 title: 'Ops!',
-                text: 'Error al cargar la subasta',
+                text: 'La subasta no pudo ser modificada',
                 icon: 'error',
                 confirmButtonText: 'Ok'
             })
+            console.log(subasta);
+            //limpiar();
         });
+    }
 
-     */
-}
+    function limpiar() {
+        document.getElementById("tablaModificarSubasta").submit();
+    }
 
-export default function EditarSubasta(props) {
-    const { item } = props;
-    console.log("item editar: ",item)
+
     return (
         <div id="editarSubasta" className="modal fade" aria-hidden="true">
 
@@ -48,33 +92,37 @@ export default function EditarSubasta(props) {
                         </button>
                     </div>
                     <div className="modal-body">
-                        <form id="tablaModificarSubasta">
+                        <form id="tablaModificarSubasta" onSubmit={handleSubmit}>
                             <div className="form-group">
                             <h5 className="text-left">Nombre:</h5>
-                                <input type="text" className="form-control" required value={item.articulo.nombre}></input>
+                                <input type="text" className="form-control" name="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Descripción:</h5>
-                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.descripcion}></input>
+                                <input type="text" className="form-control" name="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required></input>
                             </div>
                             <div className="form-group">
                             <h5 className="text-left">Precio Mínimo:</h5>
-                                <input type="text" className="form-control" name="nombre" required value={item.articulo.precioMinimo}></input>
+                                <input type="text" className="form-control" name="precioMinimo" value={preciominimo} onChange={(e) => setPrecioMinimo(e.target.value)} required></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Estado de uso:</h5>
-                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.estadoDeUso}></input>
+                                <input type="text" className="form-control" name="estadoDeUso" value={estadodeuso} onChange={(e) => setEstadoDeUso(e.target.value)} required></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Dimensiones:</h5>
-                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.dimensiones}></input>
+                                <input type="text" className="form-control" name="dimensiones" value={dimensiones} onChange={(e) => setDimensiones(e.target.value)} required></input>
                             </div>
                             <div className="form-group">
                                 <h5 className="text-left">Ubicación:</h5>
-                                <input type="text" className="form-control" name="descripcion" required value={item.articulo.ubicacion}></input>
+                                <input type="text" className="form-control" name="ubicacion" value={ubicacion} onChange={(e) => setUbicacion(e.target.value)} required></input>
+                            </div>
+                            <div className="form-group">
+                                <h5 className="text-left">FechaFin:</h5>
+                                <input type="text" className="form-control" name="fechaFin" value={fechafin} onChange={(e) => setFechaFin(e.target.value)} required></input>
                             </div>
                             <div className="modal-footer">
-                                <button onClick={update} type="submit" className="btn btn-primary" >Modificar
+                                <button type="submit" className="btn btn-primary" >Modificar
                             </button>
                             </div>
                         </form>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import ArticlesByCategory from "./ArticlesByCategory";
 
 export default function VerArticulos() {
@@ -20,16 +20,16 @@ export default function VerArticulos() {
                 <div className="container">
                     <a className="navbar-brand" href="index.html">Saleit <span>Subastas</span></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="oi oi-menu"> </span> Menu
                     </button>
 
                     <div className="collapse navbar-collapse" id="ftco-nav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"><a href="#volver" className="nav-link"
-                                                        onClick={(e) => volver()}>Regresar</a></li>
+                                onClick={(e) => volver()}>Regresar</a></li>
                             <li className="nav-item"><a href="#cerrarSesion" className="nav-link"
-                                                        onClick={(e) => signOut()}>Salir</a></li>
+                                onClick={(e) => signOut()}>Salir</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,18 +80,18 @@ function Fondo() {
                             </h2>
                             <table className="table table-striped table-dark">
                                 <thead>
-                                <tr>
-                                    <th scope="col">Artículo</th>
-                                    <th scope="col">Descripción</th>
-                                    <th scope="col">Precio Mínimo</th>
-                                    <th scope="col">Estado de Uso</th>
-                                    <th scope="col">Dimensiones</th>
-                                    <th scope="col">Ubicación</th>
-                                    <th scope="col"></th>
-                                </tr>
+                                    <tr>
+                                        <th scope="col">Artículo</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Precio Mínimo</th>
+                                        <th scope="col">Estado de Uso</th>
+                                        <th scope="col">Dimensiones</th>
+                                        <th scope="col">Ubicación</th>
+                                        <th scope="col"></th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <ArticlesByCategory/>
+                                    <ArticlesByCategory />
                                 </tbody>
                             </table>
 

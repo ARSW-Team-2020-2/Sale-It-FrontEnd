@@ -90,7 +90,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaA()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarA()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -104,7 +104,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaB()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarB()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -118,7 +118,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaC()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarC()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -134,7 +134,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaD()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarD()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -148,7 +148,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaE()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarE()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -162,7 +162,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaF()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarF()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -178,7 +178,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaG()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarG()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -192,7 +192,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaH()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarH()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
                             </p>
                         </div>
@@ -206,7 +206,7 @@ export default function Categorias() {
                             <p className="clearfix">
                                 <button onClick={(e) => asignarVerCategoriaI()} className="btn btn-primary">Ver Artículos</button>
                                 <button onClick={(e) => asignarI()} className="btn btn-primary ml-3" data-toggle="modal"
-                                        data-target="#agregarSubasta">Ofertar Artículo
+                                    data-target="#agregarSubasta">Ofertar Artículo
                                 </button>
 
                             </p>
