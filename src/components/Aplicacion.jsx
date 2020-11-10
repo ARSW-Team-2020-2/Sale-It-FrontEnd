@@ -13,7 +13,7 @@ export default function Aplicacion() {
         <div id="inicio">
             <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
                 <div className="container">
-                    <a className="navbar-brand" href="index.html">Saleit <span>Subastas</span></a>
+                    <a className="navbar-brand" href="/inicio">SaleIt <span>Subastas</span></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="oi oi-menu"> </span> Menu
@@ -45,8 +45,8 @@ function Home() {
                 <div className="col-md-12">
                     <div className="text w-100 mt-5 text-center">
                         <div className="heading-section mt-5 mb-4">
-                            <h2 className="mb-4 color-white">Bienvenido a Saleit</h2>
-                            <h2 className="mb-4 color-white">Tu mejor opción</h2>
+                            <h2 className="mb-4 color-white">Bienvenido a Sale It</h2>
+                            <h2 className="mb-4 color-white">¡Tu mejor opción!</h2>
                         </div>
                     </div>
                 </div>
