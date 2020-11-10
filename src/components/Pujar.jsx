@@ -21,6 +21,7 @@ export default function Pujar() {
             subasta: subastaID,
         }
 
+        //esto es lo que falla, back
         Axios.post("https://sale-it-back.herokuapp.com/home/users/" + userID + subastaID, puja)
             .then(res => {
                 console.log(res.data);
@@ -35,6 +36,7 @@ export default function Pujar() {
                 )
             }).catch(Response => {
                 console.log(Response);
+                // aca esta la info que necesitan
                 console.log(subastaID);
                 console.log(puja);
                 console.log(userID);

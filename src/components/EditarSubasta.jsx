@@ -50,6 +50,10 @@ export default function EditarSubasta(props) {
             vendedor: userID,
             pujas: item.pujas,
         }
+
+        //falla back
+
+
         Axios.put("https://sale-it-back.herokuapp.com/home/users/" + userID + "/auctions", subasta)
             .then(res => {
                 return res.data;
@@ -70,6 +74,8 @@ export default function EditarSubasta(props) {
                 icon: 'error',
                 confirmButtonText: 'Ok'
             })
+            //la inro que neceitan
+            console.log(userID);
             console.log(subasta);
             //limpiar();
         });

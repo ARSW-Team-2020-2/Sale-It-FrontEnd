@@ -41,12 +41,10 @@ export default function ArticlesByCategory() {
 
     }, [items])
 
-    //hacer que funcione :c
-
     function pujar(item) {
         localStorage.setItem("idArticulo", item.id);
         var idArticulo = localStorage.getItem("idArticulo");
-        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/article/", idArticulo)
+        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/article/"+idArticulo)
             .then(res => {
                 const APIResponse = [res.data];
                 console.log(APIResponse);
