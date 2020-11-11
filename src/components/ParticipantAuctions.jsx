@@ -6,6 +6,13 @@ import { faEye } from "@fortawesome/free-solid-svg-icons/faEye";
 
 class ParticipantAuctions extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: []
+        };
+    }
+
     async componentDidMount() {
         let userID = localStorage.getItem("id");
         Axios.get("https://sale-it-back.herokuapp.com/home/auctions/users/" + userID)

@@ -14,7 +14,7 @@ export default function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (password.length > 6) {
+        if (password.length >= 6) {
 
             var ciphertext = CryptoJS.AES.encrypt(password, 'saleit');
             const user = {
@@ -42,7 +42,7 @@ export default function SignUp() {
                 console.log(Response)
                 Swal.fire({
                     title: 'Ops!',
-                    text: 'Registro no válido',
+                    text: 'Ya existe una cuenta con ese correo.',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 })
