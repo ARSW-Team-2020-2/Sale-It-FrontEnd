@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
 
@@ -21,10 +21,8 @@ export default function Pujar() {
             subasta: subastaID,
         }
 
-        //esto es lo que falla, back
-        Axios.post("https://sale-it-back.herokuapp.com/home/users/" + userID + subastaID, puja)
+        Axios.post("https://sale-it-back.herokuapp.com/home/users/" + userID + "/" + subastaID, puja)
             .then(res => {
-                console.log(res.data);
                 console.log(res);
                 return res.data;
             })
@@ -35,18 +33,13 @@ export default function Pujar() {
                     'success'
                 )
             }).catch(Response => {
-                console.log(Response);
-                // aca esta la info que necesitan
-                console.log(subastaID);
-                console.log(puja);
-                console.log(userID);
-                Swal.fire({
-                    title: 'Ops!',
-                    text: 'No se pudo realizar la puja',
-                    icon: 'error',
-                    confirmButtonText: 'Ok'
-                })
-            });
+            Swal.fire({
+                title: 'Ops!',
+                text: 'Debe realizar un monto mayor!',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+        });
     }
 
     return (
@@ -64,11 +57,12 @@ export default function Pujar() {
                         <form id="tablaHacerPuja" onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <h5 className="text-left">Monto:</h5>
-                                <input onChange={(e) => setMonto(e.target.value)} type="text" className="form-control" placeholder={"$$$"} required ></input>
+                                <input onChange={(e) => setMonto(e.target.value)} type="text" className="form-control"
+                                       placeholder={"$$$"} required></input>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-primary" >Enviar
-                            </button>
+                                <button type="submit" className="btn btn-primary">Enviar
+                                </button>
                             </div>
                         </form>
                     </div>

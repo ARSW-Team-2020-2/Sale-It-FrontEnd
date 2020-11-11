@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
 import Pujar from "./Pujar"
 
 export default function ArticlesByCategory() {
@@ -44,12 +44,11 @@ export default function ArticlesByCategory() {
     function pujar(item) {
         localStorage.setItem("idArticulo", item.id);
         var idArticulo = localStorage.getItem("idArticulo");
-        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/article/"+idArticulo)
+        Axios.get("https://sale-it-back.herokuapp.com/home/auctions/article/" + idArticulo)
             .then(res => {
                 const APIResponse = [res.data];
-                console.log(APIResponse);
                 //set
-                localStorage.setItem("idSubastap", APIResponse.id);
+                localStorage.setItem("idSubastap", APIResponse[0].id);
             })
             .catch(Response => {
                 console.log(Response);
@@ -71,10 +70,12 @@ export default function ArticlesByCategory() {
             <th scope="row">{item.estadoDeUso}</th>
             <th scope="row">{item.dimensiones}</th>
             <th scope="row">{item.ubicacion}</th>
-            <th scope="row"> <button onClick={(e) => pujar(item)}
-                className="btn btn-primary ml-3" data-toggle="modal" data-target="#pujar">
-                <FontAwesomeIcon icon={faShoppingCart} />
-            </button></th>
+            <th scope="row">
+                <button onClick={(e) => pujar(item)}
+                        className="btn btn-primary ml-3" data-toggle="modal" data-target="#pujar">
+                    <FontAwesomeIcon icon={faShoppingCart}/>
+                </button>
+            </th>
             <Pujar></Pujar>
         </tr>;
     })
