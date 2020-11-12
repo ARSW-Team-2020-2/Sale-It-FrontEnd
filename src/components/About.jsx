@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function About() {
     return (
         <div id="acerca">
@@ -26,9 +27,18 @@ export default function About() {
 
             </div>
 
-            <div className="imagen" align="center">
-                <img src='/img/auction2.png' alt="auction2"></img>
+            <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src='/img/auction2.png' className="d-block w-100" alt="auction2"></img>
+                    </div>
+                </div>
             </div>
+
+
+            {/*<div className="imagen" align="center">*/}
+            {/*    <img src='/img/auction2.png' alt="auction2"></img>*/}
+            {/*</div>*/}
         </div>
     );
 }
