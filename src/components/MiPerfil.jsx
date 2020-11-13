@@ -1,19 +1,24 @@
 import React from 'react';
+import ParticipantAuctions from "./ParticipantAuctions";
 
-export default function Aplicacion() {
+export default function MiPerfil() {
 
     const signOut = (e) => {
         localStorage.removeItem('isLoggedIn');
         localStorage.removeItem('userId');
         localStorage.removeItem('typeUserLogged');
+        window.location.href = "/";
+    }
+
+    const volver = (e) => {
         window.location.href = "/inicio";
     }
 
     return (
-        <div id="inicio">
+        <div id="verPerfil">
             <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
                 <div className="container">
-                    <a className="navbar-brand" href="/inicio">SaleIt <span>Subastas</span></a>
+                    <a className="navbar-brand" href="index.html">Saleit <span>Subastas</span></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="oi oi-menu"> </span> Menu
@@ -21,37 +26,37 @@ export default function Aplicacion() {
 
                     <div className="collapse navbar-collapse" id="ftco-nav">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item"><a href="#inicio" className="nav-link">Inicio</a></li>
-                            <li className="nav-item"><a href="#acerca" className="nav-link">Acerca de Nosotros</a></li>
-                            <li className="nav-item"><a href="#categorias" className="nav-link">Nuestras Categorías</a></li>
-                            <li className="nav-item"><a href="#misSubastas" className="nav-link">Mi Perfil</a></li>
-                            <li className="nav-item"><a href="#informacion" className="nav-link">Contacto</a></li>
+                            <li className="nav-item"><a href="#volver" className="nav-link"
+                                onClick={(e) => volver()}>Regresar</a></li>
                             <li className="nav-item"><a href="#cerrarSesion" className="nav-link"
                                 onClick={(e) => signOut()}>Salir</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <Home> </Home>
+            <Fondo></Fondo>
         </div>
     );
 }
 
-function Home() {
+function Fondo() {
+
+    let us = localStorage.getItem("userName");
+
     return (
 
         <div className="overlay home-background justify-content-center">
-            <div className="row align-items-center">
-                <div className="col-md-12">
-                    <div className="text w-100 mt-5 text-center">
-                        <div className="heading-section mt-5 mb-4">
-                            <h2 className="mb-4 color-white">Bienvenido a Sale It</h2>
-                            <h2 className="mb-4 color-white">¡Tu mejor opción!</h2>
-                        </div>
-                    </div>
-                </div>
+
+<div className="mt-5">
+    <div className="row mt-5">
+<div className="container mt-5">
+            <div className="row mt-5">
+
+                <h2 className="color-white"> Bienvenid@ {us} </h2>
             </div>
+         </div>
+        </div>
+        </div>
         </div>
     );
 }
-

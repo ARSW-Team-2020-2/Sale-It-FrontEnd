@@ -1700,6 +1700,8 @@ pre {
 .auction-image{
   background-image :
   url(../img/auction3.png);
+  height: auto;
+  width: 100%;
 }
 
 .pro-image{ 

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import {faGavel} from "@fortawesome/free-solid-svg-icons";
 import Pujar from "./Pujar"
 
 export default function ArticlesByCategory() {
@@ -73,7 +73,7 @@ export default function ArticlesByCategory() {
             <th scope="row">
                 <button onClick={(e) => pujar(item)}
                         className="btn btn-primary ml-3" data-toggle="modal" data-target="#pujar">
-                    <FontAwesomeIcon icon={faShoppingCart}/>
+                    <FontAwesomeIcon icon={faGavel}/>
                 </button>
             </th>
             <Pujar></Pujar>

@@ -21,7 +21,7 @@ export default function SignIn() {
                 if (cipherPassword.toString(CryptoJS.enc.Utf8) === password) {
                     localStorage.setItem("isLoggedIn", true);
                     localStorage.setItem("id", Response.id);
-                    localStorage.setItem("email", Response.email);
+                    localStorage.setItem("userName", Response.nombre);
                     window.location.href = "/inicio";
 
                 } else {

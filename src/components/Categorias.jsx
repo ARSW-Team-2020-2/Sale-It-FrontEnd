@@ -1,5 +1,6 @@
 import React from 'react';
 import Subasta from './Subasta';
+import Buscar from './Buscar';
 
 export default function Categorias() {
 
@@ -81,6 +82,7 @@ export default function Categorias() {
                     <h2 className="mb-4">Categorías</h2>
                 </div>
             </div>
+            <Buscar></Buscar>
             <div className="row">
                 <div className="col-md-4">
                     <div className="blog-entry">

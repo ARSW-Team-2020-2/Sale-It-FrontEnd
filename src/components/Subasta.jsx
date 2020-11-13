@@ -51,6 +51,7 @@ export default function Subasta() {
                     '¡Enhorabuena!',
                     'Artículo registrado',
                     'success'
+               
                 )
                 limpiar();
             }).catch(Response => {
