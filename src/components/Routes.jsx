@@ -8,6 +8,7 @@ import MisParticipaciones from './MisParticipaciones';
 import VerArticulos from './VerArticulos';
 import EditarSubasta from './EditarSubasta';
 import MiPerfil from './MiPerfil';
+import ArticuloEspecifico from './ArticuloEspecifico';
 
 
 class Routes extends React.Component {
@@ -20,6 +21,7 @@ class Routes extends React.Component {
                 <GuardRoute path="/misParticipaciones" type="private" component={MisParticipaciones}></GuardRoute>
                 <GuardRoute path="/articulos" type="private" component={VerArticulos}></GuardRoute>
                 <GuardRoute path="/editarSubasta" type="private" component={EditarSubasta}></GuardRoute>
+                <GuardRoute path="/verArticuloEspecifico" type="private" component={ArticuloEspecifico}></GuardRoute>
                 <Route path="/" type="public" component={Autenticacion}></Route>
             </Switch>
         );

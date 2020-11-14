@@ -22,6 +22,10 @@ export default function SignIn() {
                     localStorage.setItem("isLoggedIn", true);
                     localStorage.setItem("id", Response.id);
                     localStorage.setItem("userName", Response.nombre);
+                    localStorage.setItem("userEmail", Response.email);
+                    localStorage.setItem("userDoc", Response.documento);
+                    localStorage.setItem("userTipoDoc", Response.tipodedocumento);
+                    localStorage.setItem("userTel", Response.telefono);
                     window.location.href = "/inicio";
 
                 } else {

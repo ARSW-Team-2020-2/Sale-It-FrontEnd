@@ -67,6 +67,7 @@ function Fondo() {
                                     <th scope="col">Dimensiones</th>
                                     <th scope="col">Ubicación</th>
                                     <th scope="col">Pujas</th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>

@@ -87,7 +87,7 @@ function Fondo() {
                                         <th scope="col">Estado de Uso</th>
                                         <th scope="col">Dimensiones</th>
                                         <th scope="col">Ubicación</th>
-                                        <th scope="col"></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>

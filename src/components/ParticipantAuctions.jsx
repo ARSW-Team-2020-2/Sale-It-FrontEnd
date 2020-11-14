@@ -3,6 +3,7 @@ import Axios from "axios";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons/faEye";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 class ParticipantAuctions extends Component {
 
@@ -48,6 +49,12 @@ class ParticipantAuctions extends Component {
                         <th scope="row">{item.articulo.ubicacion}</th>
                         <th scope="row"><button className="btn btn-primary ml-3">
                             <FontAwesomeIcon icon={faEye} /></button></th>
+                            <th scope="row">
+                <button
+                        className="btn btn-primary ml-3">
+                    <FontAwesomeIcon icon={faStar}/>
+                </button>
+            </th>
                     </tr>
                 );
             })

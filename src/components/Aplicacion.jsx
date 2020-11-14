@@ -23,7 +23,7 @@ export default function Aplicacion() {
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"><a href="#inicio" className="nav-link">Inicio</a></li>
                             <li className="nav-item"><a href="#acerca" className="nav-link">Acerca de Nosotros</a></li>
-                            <li className="nav-item"><a href="#categorias" className="nav-link">Nuestras Categorías</a></li>
+                            <li className="nav-item"><a href="#categorias" className="nav-link">Categorías</a></li>
                             <li className="nav-item"><a href="#misSubastas" className="nav-link">Mi Perfil</a></li>
                             <li className="nav-item"><a href="#informacion" className="nav-link">Contacto</a></li>
                             <li className="nav-item"><a href="#cerrarSesion" className="nav-link"
