@@ -3,15 +3,21 @@ import Axios from "axios";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons/faEye";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+//sin fav
+import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
+//con fav
+import {faStar as faStarSolid, faVectorSquare} from "@fortawesome/free-solid-svg-icons";
 
 class ParticipantAuctions extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            items: []
+            items: [],
+            clicked: false,
+            
         };
+        this.handleOnCLick = this.handleOnCLick.bind(this);  
     }
 
     async componentDidMount() {
@@ -33,7 +39,17 @@ class ParticipantAuctions extends Component {
             });
     }
 
+    handleOnCLick() {
+        console.log("entró");
+        this.setState({
+            clicked: !this.state.clicked
+        })
+    }
+
     render() {
+
+        var clicked = this.state.clicked
+        console.log(clicked);
 
         return (
             this.state.items.map((item, i) => {
@@ -47,15 +63,16 @@ class ParticipantAuctions extends Component {
                         <th scope="row">{item.fechaFin.substr(0, 16)}</th>
                         <th scope="row">{item.articulo.dimensiones}</th>
                         <th scope="row">{item.articulo.ubicacion}</th>
-                        <th scope="row"><button className="btn btn-primary ml-3">
+                        <th scope="row"><button className="btn btn-primary">
                             <FontAwesomeIcon icon={faEye} /></button></th>
                             <th scope="row">
-                <button
-                        className="btn btn-primary ml-3">
-                    <FontAwesomeIcon icon={faStar}/>
+                <button onClick={this.handleOnCLick}
+                        className="btn btn-primary">
+                    <FontAwesomeIcon icon={ clicked ? faStarSolid: faStarRegular}/>
                 </button>
             </th>
                     </tr>
+
                 );
             })
         )

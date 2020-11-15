@@ -47,6 +47,9 @@ function Fondo() {
     let doc = localStorage.getItem("userDoc");
     let tdoc = localStorage.getItem("userTipoDoc");
     let tel = localStorage.getItem("userTel");
+    let puj = localStorage.getItem("userPuj");
+    let sub = localStorage.getItem("userSub");
+    let fav = localStorage.getItem("userFav");
 
 
     const [nombre, setNombre] = useState(us)
@@ -56,20 +59,25 @@ function Fondo() {
     const [telefono, setTelefono] = useState(tel)
     const [clave, setClave] = useState("")
 
-
+    let userID = localStorage.getItem("id");
     const handleSubmit = (e) => {
         e.preventDefault()
         const usuario = {
+            id: userID,
             nombre: nombre,
             email: email,
             documento: documento,
             tipoDeDocumento: tipodedocumento,
             telefono: telefono,
+            pujas: puj,
+            subastas:sub,
+            favoritos:fav,
+            
         }
 
 
         //end point de la info del usuario
-        Axios.put("https://sale-it-back.herokuapp.com/home/users/" + "/auctions")
+        Axios.put("https://sale-it-back.herokuapp.com/home/users/"+userID+"/updateProfile")
             .then(res => {
                 return res.data;
             })
@@ -95,11 +103,12 @@ function Fondo() {
     const handleSubmitDos = (e) => {
         e.preventDefault()
         const usuarioClave = {
+            id: userID,
             clave: clave,
         }
 
          //end point de la clave
-        Axios.put("https://sale-it-back.herokuapp.com/home/users/" + "/auctions")
+        Axios.put("https://sale-it-back.herokuapp.com/home/users/"+userID+"/changePassword")
             .then(res => {
                 return res.data;
             })

@@ -2,12 +2,18 @@ import React, {useState, useEffect} from "react";
 import Axios from "axios";
 import Swal from "sweetalert2";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGavel, faStar} from "@fortawesome/free-solid-svg-icons";
-import Pujar from "./Pujar"
+import {faGavel} from "@fortawesome/free-solid-svg-icons";
+import Pujar from "./Pujar";
+//quitar fav
+import {faStar as faStarRegular} from "@fortawesome/free-regular-svg-icons";
+//quitar fav
+import {faStar as faStarSolid} from "@fortawesome/free-solid-svg-icons";
 
 export default function ArticlesByCategory() {
 
     const [items, setItems] = useState([])
+
+
     useEffect(() => {
         let verCategoria = localStorage.getItem("verCategoria");
         Axios.get("https://sale-it-back.herokuapp.com/home/categories/" + verCategoria + "/articles")
@@ -75,12 +81,10 @@ export default function ArticlesByCategory() {
                         className="btn btn-primary ml-3" data-toggle="modal" data-target="#pujar">
                     <FontAwesomeIcon icon={faGavel}/>
                 </button>
-       
-
-       
-                <button
+        {/* si esto fuera un componente podria poner la funcionalidad acá */}
+                <button 
                         className="btn btn-primary ml-3">
-                    <FontAwesomeIcon icon={faStar}/>
+                    <FontAwesomeIcon icon={faStarRegular}/>
                 </button>
             </th>
             <Pujar></Pujar>

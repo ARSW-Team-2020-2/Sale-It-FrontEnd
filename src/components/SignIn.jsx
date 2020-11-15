@@ -26,6 +26,9 @@ export default function SignIn() {
                     localStorage.setItem("userDoc", Response.documento);
                     localStorage.setItem("userTipoDoc", Response.tipodedocumento);
                     localStorage.setItem("userTel", Response.telefono);
+                    localStorage.setItem("userPuj", Response.listaDePujas);
+                    localStorage.setItem("userSub", Response.subastasCreadas);
+                    localStorage.setItem("userFav", Response.articulosFavoritos);
                     window.location.href = "/inicio";
 
                 } else {
