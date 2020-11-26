@@ -5,8 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './components/Routes'
 
-ReactDOM.render(
-	<script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0100/9605.js" async="async" ></script>
+ReactDOM.render(	
   <React.StrictMode>
     <BrowserRouter>
       <Routes></Routes>
